@@ -1,17 +1,33 @@
-<img src="https://github.com/ECC-BFMC/Simulator/blob/main/Picture1.png" width=30% height=30%>
+# RAVEN - Simulator ("The Digital Twin")
 
-# BFMC Simulator Project
+![Raven Sim](https://img.shields.io/badge/Component-Simulator-purple) ![Status](https://img.shields.io/badge/Status-Active-success)
 
-The project contains the entire Gazebo simulator. 
-- It can also be used to get a better overview of how the competition is environment looks like
-- It can be used in to develop the vehicle state machine
-- It can be used to simulate the path planning
-- It can be used to set-up a configuration procedure for the real track
-- Not suggested for image processing
-- Try not to fall in the "continuous simulator developing" trap
+The **Simulator** provides a Gazebo-based virtual environment for developing and testing the Raven autonomous stack without physical hardware.
 
-Tips on how to install and work on it, can be found in the 
+## 📚 Documentation
+> **Full Technical Documentation:** [bosch-future-mobility-challenge-documentation.readthedocs-hosted.com](https://bosch-future-mobility-challenge-documentation.readthedocs-hosted.com)
 
+---
 
-## The documentation is available in details here:
-[Documentation](https://bosch-future-mobility-challenge-documentation.readthedocs-hosted.com/data/useful/simulator.html)
+## 🚀 Key Features
+
+| Task ID | Feature Name | Description |
+| :--- | :--- | :--- |
+| **[008a]** | **Synthetic Data Generator** | Automated scripts to capture large-scale training datasets (Images + Labels). |
+| **[Map]** | **BFMC Track 2025** | High-fidelity 3D model of the competition track including signs and traffic lights. |
+| **[Car]** | **Raven Vehicle Model** | URDF model with simulated camera, IMU, and Ackermann steering physics. |
+
+## 🛠️ Usage
+
+### Launching the Simulation
+```bash
+# Launch the full environment with the car
+roslaunch sim_pkg map_with_car.launch
+```
+
+### Data Collection
+To run the synthetic data collection sequence:
+```bash
+roslaunch sim_pkg map_with_all_objects.launch
+python3 src/utils/scripts/synthetic_capture.py
+```
