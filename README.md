@@ -9,6 +9,7 @@ The project contains the entire Gazebo simulator.
 - It can be used to set-up a configuration procedure for the real track
 - Not suggested for image processing
 - Try not to fall in the "continuous simulator developing" trap
+- **Manual Control**: The simulator is compatible with the `raven-computer` Dashboard. Run `raven start manual` to drive the simulated car.
 
 Tips on how to install and work on it, can be found in the 
 
